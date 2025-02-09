@@ -4,24 +4,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 
 <body>
-    <h1 class="hello">Hello world</h1>
+    <div class="container">
+        <nav>
+            <p id="logo">Logo</p>
+            <button>Download</button>
+        </nav>
+
+        <section class="intro"></section>
+        <section class="steps">
+            <div class="step-counter">
+                <div class="counter-title">
+                    <h1>Steps</h1>
+                </div>
+                <div class="count">
+                    <div class="count-container">
+                        <h1>01</h1>
+                        <h1>02</h1>
+                        <h1>03</h1>
+                        <h1>04</h1>
+                        <h1>05</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="../assets/random image for project.jpeg" alt="">
+                    </div>
+                    <div class="card-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit accusamus voluptates
+                            consequuntur neque eius, autem perspiciatis recusandae optio quae doloremque.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="../assets/random image for project.jpeg" alt="">
+                    </div>
+                    <div class="card-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit accusamus voluptates
+                            consequuntur neque eius, autem perspiciatis recusandae optio quae doloremque.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="../assets/random image for project.jpeg" alt="">
+                    </div>
+                    <div class="card-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit accusamus voluptates
+                            consequuntur neque eius, autem perspiciatis recusandae optio quae doloremque.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="../assets/random image for project.jpeg" alt="">
+                    </div>
+                    <div class="card-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit accusamus voluptates
+                            consequuntur neque eius, autem perspiciatis recusandae optio quae doloremque.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="../assets/random image for project.jpeg" alt="">
+                    </div>
+                    <div class="card-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit accusamus voluptates
+                            consequuntur neque eius, autem perspiciatis recusandae optio quae doloremque.</p>
+                    </div>
+                </div>
+                <div class="card empty"></div>
+                <div class="card empty"></div>
+            </div>
+        </section>
+
+        <section class="outro">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae aut blanditiis temporibus fugiat harum
+                voluptate est quam sint alias quas repellat error aspernatur, inventore culpa nam? Unde natus at
+                dolorum!</p>
+        </section>
+    </div>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/MotionPathPlugin.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", (event) => {
-        gsap.registerPlugin(ScrollTrigger, MotionPathPlugin)
-        // gsap code here!
-    });
+    document.addEventListener("DOMContentLoaded", () => {
+        gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to(".hello", {rotation: 360, x: 100, duration: 1});
+        const lenis = new Lenis();
+        lenis.on("scroll", ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        })
+        gsap.ticker.lagSmoothing(0);
+
+
+        const stickySection = document.querySelector(".steps");
+        const stickyHeight = window.innerHeight * 7;
+        const cards = document.querySelectorAll(".cards");
+        const countContainer = document.querySelector(".count-container");
+        const totalCards = cards.length;
+
+        ScrollTrigger.create({
+            trigger: stickySection,
+            start: "top top",
+            end: `+=${stickyHeight}px`,
+            pin: true,
+            pinSpacing: true,
+            onUpdate: (self) => {
+                positionCards(self.progress);
+            }
+        });
+
+        const getRadius = () => {
+            return window.innerWidth < 900 ? window.innerWidth * 7.5 : window.innerWidth * 2.5;
+        }
+
+        const arcAngle = Math.PI * 0.4;
+        const startAngle = Math.PI / 2 - arcAngle / 2;
+        function positionCards(progress = 0) {
+            const radius = getRadius();
+            const totalTravel = 1 + totalCards / 7.5;
+            const adjustedProgress = (progress * totalTravel - 1) * 0.75;
+
+            cards.forEach((card, i) => {
+                const normalizedProgress = (totalCards - 1 - i) / totalCards;
+                const cardProgress = normalizedProgress + adjustedProgress;
+                const angle = startAngle + arcAngle * cardProgress;
+
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+                const rotation = (angle - Math.PI / 2) * (180 / Math.PI);
+
+                gsap.set(card, {
+                    x: x,
+                    y: -y + radius,
+                    rotation: -rotation,
+                    transformOrigin: "center center",
+                });
+
+                gsap.to(card, { opacity: 1, duration: 0.5, ease: "power2.out" });
+            });
+        }
+        positionCards(0);
+    });
 
 </script>
 
