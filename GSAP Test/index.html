@@ -10,10 +10,16 @@
 
 <body>
 
-    <h1 class="text-5xl mb-[100vh]">Hello world</h1>
     <div class="container">
-        <img src="../assets/random image for project.jpeg" alt="" class="w-96 h-auto box">
+        <div class="h-screen bg-blue-500 panel"></div>
+        <div class="h-screen bg-green-500 panel"></div>
+        <div class="h-screen bg-red-500 panel"></div>
     </div>
+
+
+    <!-- <div class="container">
+        <img src="../assets/random image for project.jpeg" alt="" class="w-96 h-auto opacity-0 box">
+    </div> -->
     <div class="mt-[150vh]"></div>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 
@@ -32,18 +38,34 @@
             gsap.ticker.lagSmoothing(0);
         });
 
+        let sections = gsap.utils.toArray(".panel");
+        gsap.to(sections, {
+            xPercent: -100*(sections.length-1),
+            ease: none,
+            scrollTrigger: {
+                trigger: ".container",
+                pin: true,
+                scrub: true,
+                snap: 1/(sections.length-1),
+                end: () => "+=" + document.querySelector(".container").offsetWidth,
+            }
+        });
+
         let width = window.innerWidth;
         gsap.to(".box", {
             scrollTrigger: {
                 trigger: ".box",
                 start: "top center",
-                end: "top 100px",
+                markers: true,
+                pin: true,
+                end: "top 300px",
                 scrub: 1,
                 toggleActions: "restart none none none",
             },
             x: 400,
-            y: 400,
-            scale: width/384,
+            
+            opacity: 1,
+            
             duration: 3,
             rotate: 360,
             
