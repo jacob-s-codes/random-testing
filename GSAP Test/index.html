@@ -32,13 +32,20 @@
             gsap.ticker.lagSmoothing(0);
         });
 
+        let width = window.innerWidth;
         gsap.to(".box", {
             scrollTrigger: {
-                trigger: ".container",
+                trigger: ".box",
+                start: "top center",
+                end: "top 100px",
+                scrub: 1,
                 toggleActions: "restart none none none",
             },
             x: 400,
+            y: 400,
+            scale: width/384,
             duration: 3,
+            rotate: 180,
             
         });
 
