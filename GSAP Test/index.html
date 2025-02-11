@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../src/output.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1 class="text-5xl mb-[100vh]">Hello world</h1>
+    <div class="container">
+        <img src="../assets/random image for project.jpeg" alt="" class="w-96 h-auto box">
+    </div>
+    <div class="mt-[150vh]"></div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/MotionPathPlugin.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const lenis = new Lenis();
+            lenis.on("scroll", ScrollTrigger.update);
+            gsap.ticker.add((time) => {
+                lenis.raf(time * 1000);
+            })
+            gsap.ticker.lagSmoothing(0);
+        });
+
+        gsap.to(".box", {
+            scrollTrigger: {
+                trigger: ".container",
+                toggleActions: "restart none none none",
+            },
+            x: 400,
+            duration: 3,
+            
+        });
+
+    </script>
+</body>
+
+</html>
