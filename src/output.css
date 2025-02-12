@@ -692,8 +692,17 @@
       max-width: 96rem !important;
     }
   }
+  .m-5 {
+    margin: calc(var(--spacing) * 5);
+  }
+  .mt-36 {
+    margin-top: calc(var(--spacing) * 36);
+  }
   .mt-\[150vh\] {
     margin-top: 150vh;
+  }
+  .mt-\[300vh\] {
+    margin-top: 300vh;
   }
   .mb-\[100vh\] {
     margin-bottom: 100vh;
@@ -785,6 +794,12 @@
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
+  .h-\[50\%\] {
+    height: 50%;
+  }
+  .h-\[200vh\] {
+    height: 200vh;
+  }
   .h-auto {
     height: auto;
   }
@@ -800,11 +815,29 @@
   .min-h-screen {
     min-height: 100vh;
   }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
+  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
+  .w-6 {
+    width: calc(var(--spacing) * 6);
+  }
+  .w-24 {
+    width: calc(var(--spacing) * 24);
+  }
+  .w-48 {
+    width: calc(var(--spacing) * 48);
+  }
   .w-96 {
     width: calc(var(--spacing) * 96);
+  }
+  .w-\[50\%\] {
+    width: 50%;
+  }
+  .w-full {
+    width: 100%;
   }
   .w-screen {
     width: 100vw;
@@ -1443,6 +1476,9 @@
   .bg-red-500\/\[50\%\] {
     background-color: color-mix(in oklab, var(--color-red-500) 50%, transparent);
   }
+  .bg-white {
+    background-color: var(--color-white);
+  }
   .-bg-conic {
     --tw-gradient-position: in oklab;
     background-image: conic-gradient(var(--tw-gradient-stops));
@@ -1612,6 +1648,18 @@
   .p-1 {
     padding: calc(var(--spacing) * 1);
   }
+  .px-24 {
+    padding-inline: calc(var(--spacing) * 24);
+  }
+  .py-\[50vh\] {
+    padding-block: 50vh;
+  }
+  .pt-36 {
+    padding-top: calc(var(--spacing) * 36);
+  }
+  .pb-24 {
+    padding-bottom: calc(var(--spacing) * 24);
+  }
   .text-center {
     text-align: center;
   }
@@ -1654,9 +1702,17 @@
   .align-top {
     vertical-align: top;
   }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
   .text-5xl {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
+  }
+  .text-6xl {
+    font-size: var(--text-6xl);
+    line-height: var(--tw-leading, var(--text-6xl--line-height));
   }
   .leading-none {
     --tw-leading: 1;
