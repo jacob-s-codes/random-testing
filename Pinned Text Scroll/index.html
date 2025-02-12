@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../src/output.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="py-[50vh]">
+        Here's some stuff above
+    </div>
+
+    <div class="relative flex flex-row justify-between pt-36 px-24">
+        <div class="pin">
+            <h1 class="text-6xl">This text should stay in place</h1>
+        </div>
+        <div class="">
+            <h2 class="text-4xl text-center pb-24">Here is some of our work:</h2>
+            <img src="../assets/random image for project.jpeg" alt="" class="w-96 pb-24">
+            <img src="../assets/random image for project.jpeg" alt="" class="w-96 pb-24">
+            <img src="../assets/random image for project.jpeg" alt="" class="w-96 pb-24">
+            <img src="../assets/random image for project.jpeg" alt="" class="w-96 pb-24">
+            
+        </div>
+    </div>
+    
+
+    <!-- <div class="flex flex-row justify-between items-center px-24 pt-36">
+        <div class="relative">
+            <h1 class="text-6xl pin">This text should stay in place</h1>
+        </div>
+        <div>
+            <div class="bg-blue-500 h-screen w-24">Hi</div>
+            <div class="bg-blue-500 h-screen w-24 mt-36">Hi</div>
+        </div>
+    </div> -->
+
+
+    <!-- <div class="container">
+        <img src="../assets/random image for project.jpeg" alt="" class="w-96 h-auto opacity-0 box">
+    </div> -->
+    <div class="mt-[300vh]"></div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/MotionPathPlugin.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const lenis = new Lenis();
+            lenis.on("scroll", ScrollTrigger.update);
+            gsap.ticker.add((time) => {
+                lenis.raf(time * 1000);
+            })
+            gsap.ticker.lagSmoothing(0);
+        });
+
+        gsap.to(".pin", {
+            scrollTrigger: {
+                trigger: ".pin",
+                start: "top 50%",
+                end: "+=200%",
+                markers: true,
+                pin: true,
+            }
+        });
+
+        
+
+        
+
+    </script>
+</body>
+
+</html>
