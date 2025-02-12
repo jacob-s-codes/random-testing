@@ -1249,6 +1249,12 @@
       --tw-space-y-reverse: 1;
     }
   }
+  .gap-y-56 {
+    row-gap: calc(var(--spacing) * 56);
+  }
+  .gap-y-96 {
+    row-gap: calc(var(--spacing) * 96);
+  }
   .space-x-reverse {
     :where(& > :not(:last-child)) {
       --tw-space-x-reverse: 1;
@@ -1659,6 +1665,9 @@
   }
   .pb-24 {
     padding-bottom: calc(var(--spacing) * 24);
+  }
+  .pb-56 {
+    padding-bottom: calc(var(--spacing) * 56);
   }
   .text-center {
     text-align: center;

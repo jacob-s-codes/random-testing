@@ -18,16 +18,16 @@
         <div class="pin">
             <h1 class="text-6xl">This text should stay in place</h1>
         </div>
-        <div class="">
+        <div class="flex flex-col items-center gap-y-96">
             <h2 class="text-4xl text-center pb-24">Here is some of our work:</h2>
-            <img src="../assets/random image for project.jpeg" alt="" class="w-96 pb-24">
-            <img src="../assets/random image for project.jpeg" alt="" class="w-96 pb-24">
-            <img src="../assets/random image for project.jpeg" alt="" class="w-96 pb-24">
-            <img src="../assets/random image for project.jpeg" alt="" class="w-96 pb-24">
-            
+            <img src="../assets/random image for project.jpeg" alt="" class="w-96">
+            <img src="../assets/random image for project.jpeg" alt="" class="w-96">
+            <img src="../assets/random image for project.jpeg" alt="" class="w-96">
+            <img src="../assets/random image for project.jpeg" alt="" class="w-96">
+
         </div>
     </div>
-    
+
 
     <!-- <div class="flex flex-row justify-between items-center px-24 pt-36">
         <div class="relative">
@@ -66,14 +66,39 @@
                 trigger: ".pin",
                 start: "top 50%",
                 end: "+=200%",
-                markers: true,
                 pin: true,
+                markers: true,
             }
         });
 
-        
+        const texts = [
+            "This is image 1 description",
+            "This is image 2 description",
+            "This is image 3 description",
+            "This is image 4 description"
+        ];
 
-        
+        // Select all images
+        const images = document.querySelectorAll("img");
+        const textElement = document.querySelector(".pin h1"); // The text that will change
+
+        images.forEach((img, index) => {
+            ScrollTrigger.create({
+                trigger: img,
+                start: "top center", // When the image reaches the center of the screen
+                end: "bottom center",
+                onEnter: () => textElement.textContent = texts[index], // Change text
+                onLeaveBack: () => {
+                    if (index > 0) {
+                        textElement.textContent = texts[index - 1]; // Go back to previous text
+                    }
+                }
+            });
+        });
+
+
+
+
 
     </script>
 </body>
