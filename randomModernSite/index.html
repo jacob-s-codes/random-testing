@@ -9,12 +9,34 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body class="w-full">
-    <div class="darkbg h-screen w-full">
-
+<body class="w-full font-radley">
+    <div class="darkbg h-screen w-full text-white flex justify-center text-6xl">
+        <h1 class="pt-24 textanimate">Your Cool Name Here</h1>
     </div>
+
+    <div class="mt-36 mx-24 text-3xl">
+        <h2 class="text-gray-400 otheranim">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus rerum
+            possimus neque corporis, repellendus minima reprehenderit ab accusamus quae omnis. Voluptas pariatur quod
+            modi expedita incidunt quam vitae cupiditate ex! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Veritatis ullam amet obcaecati consectetur facere, a aliquam dolorem quaerat praesentium ea?</h2>
+    </div>
+
     
-    
+
+    <div class="cube-container ">
+        <div class="cube">
+            <div class="face front"><img src="../assets/random image for project.jpeg" alt="Front"></div>
+            <div class="face back"><img src="../assets/random image for project.jpeg" alt="Back"></div>
+            <div class="face left"><img src="../assets/random image for project.jpeg" alt="Left"></div>
+            <div class="face right"><img src="../assets/random image for project.jpeg" alt="Right"></div>
+            <div class="face top"><img src="../assets/random image for project.jpeg" alt="Top"></div>
+            <div class="face bottom"><img src="../assets/random image for project.jpeg" alt="Bottom"></div>
+        </div>
+    </div>
+
+
+
+
 
 
 
@@ -36,6 +58,74 @@
                 lenis.raf(time * 1000);
             })
             gsap.ticker.lagSmoothing(0);
+        });
+
+        let viewportHeight = window.innerHeight;
+
+        gsap.to(".textanimate", {
+            color: "red",
+            scrollTrigger: {
+                trigger: ".textanimate",
+                start: "top top",
+                end: "top -100vh",
+                scrub: 1,
+                pin: true,
+                markers: true,
+            },
+        });
+
+        gsap.to(".cube", {
+            rotateY: 360,  // Full rotation on Y-axis
+            rotateX: 360,  // Full rotation on X-axis
+            scrollTrigger: {
+                trigger: ".cube",
+                start: "top 50%",
+                end: "+=2000", // Lasts a full viewport scroll
+                scrub: true,
+                markers: true,
+                pin: true, // Pin the cube
+                scrub: 1, // Scrub through the scroll
+                
+            }
+        });
+
+        // document.addEventListener("mousemove", (e) => {
+        //     let x = e.clientX / window.innerWidth - 0.5; // X-axis movement
+        //     let y = e.clientY / window.innerHeight - 0.5; // Y-axis movement
+
+        //     gsap.to(".cube", {
+        //         rotationY: x * 360, // Rotate based on horizontal mouse movement
+        //         rotationX: -y * 360, // Rotate based on vertical mouse movement
+        //         ease: "power1.out",
+        //         duration: 0.5
+        //     });
+        // });
+
+
+
+
+
+        // gsap.to(".otheranim", {
+        //     color: "black",
+        //     scrollTrigger: {
+        //         trigger: ".otheranim",
+        //         start: "center center",
+        //         end: "bottom bottom",
+        //         scrub: 1,
+        //         pin: true,
+        //         markers: true,
+        //     },
+        // });
+
+        gsap.to(".otheranim", {
+             // Final color
+            scrollTrigger: {
+                trigger: ".otheranim",
+                start: "top center",     // When the top of #text reaches 80% of the viewport
+                end: "+=1000",    // Ends after scrolling a full viewport height
+                scrub: true,
+                        // Smooth transition based on scroll speed
+            }
         });
 
 
