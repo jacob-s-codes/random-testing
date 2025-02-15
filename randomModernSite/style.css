@@ -5,6 +5,27 @@
     
 }
 
+.scroll-wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .scroll-content {
+    display: flex;
+    width: max-content;
+  }
+  
+  .panel {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-center: items-center;
+    background: lightgray;
+    font-size: 2rem;
+  }
+  
+
 .cube-container {
     display: flex;
     justify-content: center;
@@ -42,6 +63,11 @@
   .right  { transform: rotateY(90deg) translateZ(100px); }
   .top    { transform: rotateX(90deg) translateZ(100px); }
   .bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+  .textanimate {
+    mix-blend-mode: difference; /* Makes the white text "cut through" as it grows */
+}
+
   
  
   

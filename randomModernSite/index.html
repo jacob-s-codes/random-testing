@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body class="w-full font-radley">
-    <div class="darkbg h-screen w-full text-white flex justify-center text-6xl">
-        <h1 class="pt-24 textanimate">Your Cool Name Here</h1>
+<body class="w-full font-radley overflow-hidden ">
+    <div class="darkbg h-screen w-full flex justify-center items-center text-6xl textcontainer">
+        <h1 class="textanimate opacity-25">Your Cool Name Here</h1>
     </div>
+    
 
     <div class="mt-36 mx-24 text-3xl">
         <h2 class="text-gray-400 otheranim">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus rerum
@@ -21,9 +22,19 @@
             Veritatis ullam amet obcaecati consectetur facere, a aliquam dolorem quaerat praesentium ea?</h2>
     </div>
 
+    <!-- <div class="scroll-wrapper">
+        <div class="scroll-content">
+            <section class="panel ">Section 1</section>
+            <section class="panel w-full h-screen flex justify-items-center bg-blue-500">Section 2</section>
+            <section class="panel w-full h-screen flex justify-items-center bg-blue-500">Section 3</section>
+            <section class="panel w-full h-screen flex justify-items-center bg-blue-500">Section 4</section>
+        </div>
+    </div> -->
 
 
-    <div class="cube-container ">
+
+
+    <!-- <div class="cube-container ">
         <div class="cube">
             <div class="face front"><img src="../assets/random image for project.jpeg" alt="Front"></div>
             <div class="face back"><img src="../assets/random image for project.jpeg" alt="Back"></div>
@@ -32,7 +43,7 @@
             <div class="face top"><img src="../assets/random image for project.jpeg" alt="Top"></div>
             <div class="face bottom"><img src="../assets/random image for project.jpeg" alt="Bottom"></div>
         </div>
-    </div>
+    </div> -->
 
 
 
@@ -61,18 +72,35 @@
         });
 
         let viewportHeight = window.innerHeight;
+        gsap.to(".scroll-content", {
+            x: () => -document.querySelector(".scroll-content").scrollWidth + window.innerWidth,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".scroll-wrapper",
+                start: "top top",
+                end: () => "+=" + document.querySelector(".scroll-content").scrollWidth,
+                scrub: true,
+                pin: true, // Keeps the section fixed while scrolling horizontally
+            }
+        });
 
-        // gsap.to(".textanimate", {
-        //     color: "red",
-        //     scrollTrigger: {
-        //         trigger: ".textanimate",
-        //         start: "top top",
-        //         end: "top -100vh",
-        //         scrub: 1,
-        //         pin: true,
-        //         markers: true,
-        //     },
-        // });
+
+        gsap.to(".textanimate", {
+            scale: 20,  // Massive scaling to make it take over
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".textcontainer",
+                start: "top top",
+                end: "+=1000",
+                scrub: 1,
+                pin: true,
+            },
+        });
+
+        // Background color transition
+        
+
+
 
         // gsap.timeline({
         //     scrollTrigger: {
@@ -146,16 +174,7 @@
         //     },
         // });
 
-        gsap.to(".otheranim", {
-            // Final color
-            scrollTrigger: {
-                trigger: ".otheranim",
-                start: "top center",     // When the top of #text reaches 80% of the viewport
-                end: "+=1000",    // Ends after scrolling a full viewport height
-                scrub: true,
-                // Smooth transition based on scroll speed
-            }
-        });
+        
 
 
 

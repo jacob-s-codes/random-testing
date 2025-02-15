@@ -1,107 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="../src/output.css" rel="stylesheet">
-</head>
-
-<body>
-
-    <div class="py-[50vh]">
-        Here's some stuff above
-    </div>
-
-    <div class="relative flex flex-row justify-between pt-36 px-24">
-        <div class="pin">
-            <h1 class="text-6xl">This text should stay in place</h1>
-        </div>
-        <div class="flex flex-col items-center gap-y-96">
-            <h2 class="text-4xl text-center pb-24">Here is some of our work:</h2>
-            <img src="../assets/random image for project.jpeg" alt="" class="w-96">
-            <img src="../assets/random image for project.jpeg" alt="" class="w-96">
-            <img src="../assets/random image for project.jpeg" alt="" class="w-96">
-            <img src="../assets/random image for project.jpeg" alt="" class="w-96">
-
-        </div>
-    </div>
-
-
-    <!-- Consider making an onobe remake but with a bunch of gsap? -->
-    <!-- <div class="flex flex-row justify-between items-center px-24 pt-36">
-        <div class="relative">
-            <h1 class="text-6xl pin">This text should stay in place</h1>
-        </div>
-        <div>
-            <div class="bg-blue-500 h-screen w-24">Hi</div>
-            <div class="bg-blue-500 h-screen w-24 mt-36">Hi</div>
-        </div>
-    </div> -->
-
-
-    <!-- <div class="container">
-        <img src="../assets/random image for project.jpeg" alt="" class="w-96 h-auto opacity-0 box">
-    </div> -->
-    <div class="mt-[300vh]"></div>
+    <title>Scroll Into Text Effect</title>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/MotionPathPlugin.min.js"></script>
-    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/tailwindcss@^3.0"></script>
+    <link rel="stylesheet" href="../src/output.css">
+    <style>
+        body {
+            background-color: black;
+            overflow-x: hidden;
+        }
+        .textanimate {
+            mix-blend-mode: difference;
+            transform-origin: center;
+        }
+    </style>
+</head>
+<body class="h-[300vh] flex flex-col items-center justify-center text-white font-bold text-6xl">
+
+    <div class="h-screen w-full flex justify-center items-center">
+        <h1 class="textanimate">YOUR COOL NAME</h1>
+    </div>
+
+    <div class="mt-[50vh]">
+        Here's some stuff below
+    </div>
+
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            gsap.registerPlugin(ScrollTrigger);
+        gsap.registerPlugin(ScrollTrigger);
 
-            const lenis = new Lenis();
-            lenis.on("scroll", ScrollTrigger.update);
-            gsap.ticker.add((time) => {
-                lenis.raf(time * 1000);
-            })
-            gsap.ticker.lagSmoothing(0);
-        });
-
-        gsap.to(".pin", {
+        gsap.to(".textanimate", {
+            scale: 20, // Expand massively
+            opacity: 1,
             scrollTrigger: {
-                trigger: ".pin",
-                start: "top 50%",
-                end: "+=200%",
+                trigger: ".textanimate",
+                start: "top center",
+                end: "+=1000",
+                scrub: 1,
                 pin: true,
-                markers: true,
-            }
+            },
         });
 
-        const texts = [
-            "This is image 1 description",
-            "This is image 2 description",
-            "This is image 3 description",
-            "This is image 4 description"
-        ];
-
-        // Select all images
-        const images = document.querySelectorAll("img");
-        const textElement = document.querySelector(".pin h1"); // The text that will change
-
-        images.forEach((img, index) => {
-            ScrollTrigger.create({
-                trigger: img,
-                start: "top center", // When the image reaches the center of the screen
-                end: "bottom center",
-                onEnter: () => textElement.textContent = texts[index], // Change text
-                onLeaveBack: () => {
-                    if (index > 0) {
-                        textElement.textContent = texts[index - 1]; // Go back to previous text
-                    }
-                }
-            });
+        gsap.to("body", {
+            backgroundColor: "#ffffff", // Transition to white
+            scrollTrigger: {
+                trigger: ".textanimate",
+                start: "top center",
+                end: "+=1000",
+                scrub: 1,
+            },
         });
-
-
-
-
-
     </script>
-</body>
 
+</body>
 </html>
