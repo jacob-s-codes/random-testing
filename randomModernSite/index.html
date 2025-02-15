@@ -21,7 +21,7 @@
             Veritatis ullam amet obcaecati consectetur facere, a aliquam dolorem quaerat praesentium ea?</h2>
     </div>
 
-    
+
 
     <div class="cube-container ">
         <div class="cube">
@@ -62,32 +62,61 @@
 
         let viewportHeight = window.innerHeight;
 
-        gsap.to(".textanimate", {
-            color: "red",
-            scrollTrigger: {
-                trigger: ".textanimate",
-                start: "top top",
-                end: "top -100vh",
-                scrub: 1,
-                pin: true,
-                markers: true,
-            },
-        });
+        // gsap.to(".textanimate", {
+        //     color: "red",
+        //     scrollTrigger: {
+        //         trigger: ".textanimate",
+        //         start: "top top",
+        //         end: "top -100vh",
+        //         scrub: 1,
+        //         pin: true,
+        //         markers: true,
+        //     },
+        // });
 
-        gsap.to(".cube", {
-            rotateY: 360,  // Full rotation on Y-axis
-            rotateX: 360,  // Full rotation on X-axis
-            scrollTrigger: {
-                trigger: ".cube",
-                start: "top 50%",
-                end: "+=2000", // Lasts a full viewport scroll
-                scrub: true,
-                markers: true,
-                pin: true, // Pin the cube
-                scrub: 1, // Scrub through the scroll
-                
-            }
-        });
+        // gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: ".cube-container",
+        //         start: "top top",
+        //         end: "+=1000",
+        //         scrub: true,
+        //         markers: true,
+        //         pin: true, // Keeps the cube in place while scaling
+        //     }
+        // })
+        //     .to(".cube", {
+        //         rotationX: 360,  // More rotation for a dramatic effect
+        //         rotationY: 360,
+        //         scale: Math.max(window.innerWidth / 100, window.innerHeight / 100), // Makes cube scale proportionally
+        //         duration: 2
+        //     })
+        //     .to(".cube", {
+        //         opacity: 0,
+        //         duration: 0.5
+        //     }, "-=0.5") // Fade out cube as it reaches full viewport
+        //     .to("body", {
+        //         backgroundImage: "url('../assets/muchhigherresbg.jpg')",
+        //         backgroundSize: "cover",
+        //         overflow: "hidden",
+        //         duration: 1
+        //     }, "-=0.5"); // Background transition at the right time
+
+        //     gsap.to(".cube", {
+        //     rotateY: 360,  // Full rotation on Y-axis
+        //     rotateX: 360,  // Full rotation on X-axis
+        //     scrollTrigger: {
+        //         trigger: ".cube",
+        //         start: "top 50%",
+        //         end: "+=2000", // Lasts a full viewport scroll
+        //         scrub: true,
+        //         markers: true,
+        //         pin: true, // Pin the cube
+        //         scrub: 1, // Scrub through the scroll
+
+        //     }
+        // });
+
+
 
         // document.addEventListener("mousemove", (e) => {
         //     let x = e.clientX / window.innerWidth - 0.5; // X-axis movement
@@ -118,13 +147,13 @@
         // });
 
         gsap.to(".otheranim", {
-             // Final color
+            // Final color
             scrollTrigger: {
                 trigger: ".otheranim",
                 start: "top center",     // When the top of #text reaches 80% of the viewport
                 end: "+=1000",    // Ends after scrolling a full viewport height
                 scrub: true,
-                        // Smooth transition based on scroll speed
+                // Smooth transition based on scroll speed
             }
         });
 
