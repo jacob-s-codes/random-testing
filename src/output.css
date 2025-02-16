@@ -702,14 +702,8 @@
   .mx-auto {
     margin-inline: auto;
   }
-  .my-\[50vh\] {
-    margin-block: 50vh;
-  }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
-  }
-  .mt-12 {
-    margin-top: calc(var(--spacing) * 12);
   }
   .mt-18 {
     margin-top: calc(var(--spacing) * 18);
@@ -816,9 +810,6 @@
   .h-auto {
     height: auto;
   }
-  .h-full {
-    height: 100%;
-  }
   .h-screen {
     height: 100vh;
   }
@@ -842,9 +833,6 @@
   }
   .w-full {
     width: 100%;
-  }
-  .w-max {
-    width: max-content;
   }
   .w-screen {
     width: 100vw;
@@ -1352,6 +1340,9 @@
   .overflow-hidden {
     overflow: hidden;
   }
+  .overflow-y-hidden {
+    overflow-y: hidden;
+  }
   .scroll-auto {
     scroll-behavior: auto;
   }
@@ -1689,12 +1680,6 @@
   .pt-8 {
     padding-top: calc(var(--spacing) * 8);
   }
-  .pt-12 {
-    padding-top: calc(var(--spacing) * 12);
-  }
-  .pt-24 {
-    padding-top: calc(var(--spacing) * 24);
-  }
   .pt-36 {
     padding-top: calc(var(--spacing) * 36);
   }
@@ -1850,6 +1835,9 @@
   }
   .\[color\:red\]\/50\! {
     color: color-mix(in oklab, red 50%, transparent) !important;
+  }
+  .text-blue-300 {
+    color: var(--color-blue-300);
   }
   .text-blue-800 {
     color: var(--color-blue-800);
@@ -2008,11 +1996,17 @@
   .opacity-0 {
     opacity: 0%;
   }
+  .opacity-1 {
+    opacity: 1%;
+  }
   .opacity-25 {
     opacity: 25%;
   }
   .opacity-50 {
     opacity: 50%;
+  }
+  .opacity-100 {
+    opacity: 100%;
   }
   .mix-blend-plus-darker {
     mix-blend-mode: plus-darker;

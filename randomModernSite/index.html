@@ -10,8 +10,8 @@
 </head>
 
 <body class="w-full font-radley overflow-hidden ">
-    <div class="darkbg h-screen w-full flex justify-center items-center text-6xl textcontainer">
-        <h1 class="textanimate opacity-25">Your Cool Name Here</h1>
+    <div class="darkbg h-screen w-full flex justify-center items-center text-6xl textcontainer text-blue-300 max-h-screen overflow-y-hidden">
+        <h1 class="textanimate opacity-50">Your Cool Name Here</h1>
     </div>
     
 
@@ -34,7 +34,7 @@
 
 
 
-    <!-- <div class="cube-container ">
+    <div class="cube-container ">
         <div class="cube">
             <div class="face front"><img src="../assets/random image for project.jpeg" alt="Front"></div>
             <div class="face back"><img src="../assets/random image for project.jpeg" alt="Back"></div>
@@ -43,7 +43,7 @@
             <div class="face top"><img src="../assets/random image for project.jpeg" alt="Top"></div>
             <div class="face bottom"><img src="../assets/random image for project.jpeg" alt="Bottom"></div>
         </div>
-    </div> -->
+    </div>
 
 
 
@@ -72,22 +72,23 @@
         });
 
         let viewportHeight = window.innerHeight;
-        gsap.to(".scroll-content", {
-            x: () => -document.querySelector(".scroll-content").scrollWidth + window.innerWidth,
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".scroll-wrapper",
-                start: "top top",
-                end: () => "+=" + document.querySelector(".scroll-content").scrollWidth,
-                scrub: true,
-                pin: true, // Keeps the section fixed while scrolling horizontally
-            }
-        });
+        // gsap.to(".scroll-content", {
+        //     x: () => -document.querySelector(".scroll-content").scrollWidth + window.innerWidth,
+        //     ease: "none",
+        //     scrollTrigger: {
+        //         trigger: ".scroll-wrapper",
+        //         start: "top top",
+        //         end: () => "+=" + document.querySelector(".scroll-content").scrollWidth,
+        //         scrub: true,
+        //         pin: true, // Keeps the section fixed while scrolling horizontally
+        //     }
+        // });
 
 
-        gsap.to(".textanimate", {
-            scale: 20,  // Massive scaling to make it take over
+        gsap.to(".textanimate", { // Massive scaling to make it take over
             opacity: 1,
+            scale: 20,
+            
             scrollTrigger: {
                 trigger: ".textcontainer",
                 start: "top top",
