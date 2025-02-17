@@ -375,6 +375,7 @@
       --font-mono--font-variation-settings
     );
     --font-radley: Radley, "sans-serif";
+    --color-darkbg: #050126;
   }
 }
 @layer base {
@@ -828,8 +829,17 @@
   .w-24 {
     width: calc(var(--spacing) * 24);
   }
+  .w-36 {
+    width: calc(var(--spacing) * 36);
+  }
+  .w-48 {
+    width: calc(var(--spacing) * 48);
+  }
   .w-96 {
     width: calc(var(--spacing) * 96);
+  }
+  .w-\[50\%\] {
+    width: 50%;
   }
   .w-full {
     width: 100%;
@@ -839,6 +849,9 @@
   }
   .max-w-\[1000px\] {
     max-width: 1000px;
+  }
+  .max-w-\[1800px\] {
+    max-width: 1800px;
   }
   .max-w-none {
     max-width: none;
@@ -1242,6 +1255,12 @@
   .justify-items-stretch {
     justify-items: stretch;
   }
+  .gap-x-12 {
+    column-gap: calc(var(--spacing) * 12);
+  }
+  .gap-x-36 {
+    column-gap: calc(var(--spacing) * 36);
+  }
   .space-y-0 {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 0;
@@ -1339,6 +1358,9 @@
   }
   .overflow-hidden {
     overflow: hidden;
+  }
+  .overflow-x-hidden {
+    overflow-x: hidden;
   }
   .overflow-y-hidden {
     overflow-y: hidden;
@@ -1483,6 +1505,9 @@
   }
   .bg-blue-500 {
     background-color: var(--color-blue-500);
+  }
+  .bg-darkbg {
+    background-color: var(--color-darkbg);
   }
   .bg-red-500 {
     background-color: var(--color-red-500);
@@ -1668,11 +1693,17 @@
   .px-9 {
     padding-inline: calc(var(--spacing) * 9);
   }
+  .px-12 {
+    padding-inline: calc(var(--spacing) * 12);
+  }
   .px-24 {
     padding-inline: calc(var(--spacing) * 24);
   }
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
+  }
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
   }
   .py-\[50vh\] {
     padding-block: 50vh;
@@ -1746,6 +1777,10 @@
   .text-6xl {
     font-size: var(--text-6xl);
     line-height: var(--tw-leading, var(--text-6xl--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
   }
   .leading-none {
     --tw-leading: 1;
@@ -1996,17 +2031,8 @@
   .opacity-0 {
     opacity: 0%;
   }
-  .opacity-1 {
-    opacity: 1%;
-  }
-  .opacity-25 {
-    opacity: 25%;
-  }
   .opacity-50 {
     opacity: 50%;
-  }
-  .opacity-100 {
-    opacity: 100%;
   }
   .mix-blend-plus-darker {
     mix-blend-mode: plus-darker;
