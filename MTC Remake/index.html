@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,28 +8,133 @@
     <link rel="stylesheet" href="./styles.css">
     <title>Document</title>
 </head>
-<body class="overflow-x-hidden">
+
+<body class="overflow-x-hidden font-courier">
     <div class="sticky top-0">
-        <div class="text-white w-full bg-darkbg  overflow-x-hidden">
-            <ul class="max-w-[1800px] mx-auto flex flex-row items-center   justify-between py-8 text-xl px-12">
-                <li class="text-2xl">MODE TO CODE</li>
+        <div class="text-white w-full bg-darkbg absolute overflow-x-hidden">
+            <ul class="max-w-[1800px] mx-auto flex flex-row items-center   justify-between text-xl px-12">
+                <li class="text-2xl "><img src="../assets/horizontalmtclogo.jpg" alt="" class="w-36 "></li>
                 <div class="flex flex-row justify-between gap-x-36">
-                    <li>About</li>
-                    <li>Learn</li>
-                    <li>Contact</li>
+                    <li>ABOUT</li>
+                    <li>LEARN</li>
+                    <li>CONTACT</li>
                 </div>
             </ul>
         </div>
     </div>
-    <div class="w-full h-screen mtcbg mb-80 text-6xl bg-gradient-to-b from-white to-blue-200">
+    <div class="w-full h-screen mtcbg  text-6xl bg-gradient-to-b from-white to-blue-200">
         <div class="flex flex-row items-center justify-center px-12">
-            <img src="../assets/Teachingimg1.jpg" alt="" class="w-[600px] h-auto mb-96">
+            <img src="../assets/Teachingimg1.jpg" alt=""
+                class="w-[600px] h-auto mb-96 rounded-xl shadow-2xl animatedown shadow-black">
             <div class="flex justify-center text-center h-screen items-center">
-                <h1 class="max-w-2xl">Teaching the next generation valuable technological tools</h1>
+                <h1 class="max-w-6xl toupper uppercase font-bold">Teaching the next generation valuable technological
+                    tools</h1>
             </div>
-            <img src="../assets/mtclogo.jpg" alt="" class="w-[600px] h-auto mt-96">
+            <img src="../assets/mtclogo.jpg" alt=""
+                class="w-[600px] h-auto mt-96 rounded-xl animatedown shadow-2xl shadow-black">
+        </div>
+    </div>
+    <div class=" bg-blue-200 pt-36 ">
+        <div class="max-w-[1800px] mx-auto px-12">
+            <div class="flex flex-row items-center justify-between">
+                <div class="flex flex-col max-w-3xl gap-y-12 animateleft">
+                    <h2 class="uppercase text-4xl font-bold underline decoration-[8px]">Who we are</h2>
+                    <p class="text-2xl">We are a team of dedicated professionals who are passionate about teaching the
+                        next generation valuable technological tools. We believe that the future of the world is in the
+                        hands of the young people and we are committed to ensuring that they are well equipped to take
+                        on the challenges of the future.</p>
+                    <button class="w-fit flex  py-4 px-6 bg-darkbg text-white rounded-xl">LEARN MORE ABOUT US</button>
+                </div>
+                <div class="max-w-3xl">
+                    <img src="../assets/muchhigherresbg.jpg" alt="" class="rounded-xl">
+                </div>
+            </div>
         </div>
     </div>
 
+    <div class="bg-blue-200 pt-36 pb-96">
+        <div class="max-w-[1800px] mx-auto px-12">
+            <div class="flex flex-row items-center justify-center">
+                <svg class="h-64 w-24" viewBox="0 0 10 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 5C5 259.4 5 344.333 5 355" stroke="black" stroke-width="10" stroke-linecap="round" />
+                </svg>
+
+
+                <div class="flex flex-col items-center max-w-xl gap-y-6 text-center">
+                    <h2 class="font-bold text-3xl underline decoration-[8px]">TEACHING ONLINE</h2>
+                    <p>Teaching students virtually and online in Vermont, India and more! </p>
+                </div>
+                <svg class="h-64 w-24" viewBox="0 0 10 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 5C5 259.4 5 344.333 5 355" stroke="black" stroke-width="10" stroke-linecap="round" />
+                </svg>
+                <div class="flex flex-col items-center max-w-xl gap-y-6 text-center">
+                    <h2 class="font-bold text-3xl underline decoration-[8px]">TEACHING ONLINE</h2>
+                    <p>Teaching students virtually and online in Vermont, India and more! </p>
+                </div>
+                <svg class="h-64 w-24" viewBox="0 0 10 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 5C5 259.4 5 344.333 5 355" stroke="black" stroke-width="10" stroke-linecap="round" />
+                </svg>
+                <div class="flex flex-col items-center max-w-xl gap-y-6 text-center">
+                    <h2 class="font-bold text-3xl underline decoration-[8px]">TEACHING ONLINE</h2>
+                    <p>Teaching students virtually and online in Vermont, India and more! </p>
+                </div>
+                <svg class="h-64 w-24" viewBox="0 0 10 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 5C5 259.4 5 344.333 5 355" stroke="black" stroke-width="10" stroke-linecap="round" />
+                </svg>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/MotionPathPlugin.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const lenis = new Lenis();
+            lenis.on("scroll", ScrollTrigger.update);
+            gsap.ticker.add((time) => {
+                lenis.raf(time * 1000);
+            })
+            gsap.ticker.lagSmoothing(0);
+        });
+
+        gsap.to(".animatedown", {
+            scrollTrigger: {
+                trigger: ".animatedown",
+                start: "top top",
+                end: "bottom 10%",
+                scrub: 1,
+
+            },
+            y: -200,
+        });
+
+        gsap.from(".animateleft", {
+            x: "-100vw", // Start completely off-screen to the left
+            opacity: 0,  // Make the element initially invisible
+            scrollTrigger: {
+                trigger: ".animateleft",
+                start: "top 80%", // Start the animation when the element is 80% from the top of the viewport
+                end: "top 20%",   // End when it's closer to the top of the viewport
+                scrub: 1,         // Makes the animation responsive to scroll
+                markers: true,    // Markers to visualize the trigger points
+            },
+            x: 0, // Move into place
+            opacity: 1, // Fade the element in
+        });
+
+
+
+
+    </script>
+
 </body>
+
 </html>
