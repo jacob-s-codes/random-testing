@@ -5,3 +5,16 @@
     background-repeat: no-repeat;
 
 } */
+
+
+
+.dark-overlay {
+    position: absolute;
+    inset: 0; /* Covers the entire div */
+    background: 
+    linear-gradient(to top right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 60%);
+
+    pointer-events: none; /* Ensures interactions pass through */
+    border-radius: 12px; /* Match the image's rounded corners */
+}
+
