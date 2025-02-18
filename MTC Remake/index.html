@@ -10,7 +10,7 @@
 </head>
 
 <body class="overflow-x-hidden font-courier">
-    <div class="sticky top-0">
+    <div class="sticky top-0 z-10">
         <div class="text-white w-full bg-darkbg absolute overflow-x-hidden">
             <ul class="max-w-[1800px] mx-auto flex flex-row items-center   justify-between text-xl px-12">
                 <li class="text-2xl "><img src="../assets/horizontalmtclogo.jpg" alt="" class="w-36 "></li>
@@ -25,13 +25,13 @@
     <div class="w-full h-screen mtcbg  text-6xl bg-gradient-to-b from-white to-blue-200">
         <div class="flex flex-row items-center justify-center px-12">
             <img src="../assets/Teachingimg1.jpg" alt=""
-                class="w-[600px] h-auto mb-96 rounded-xl shadow-2xl animatedown shadow-black">
+                class="w-[600px] h-auto mb-96 rounded-xl shadow-2xl animatedown shadow-black z-20">
             <div class="flex justify-center text-center h-screen items-center">
                 <h1 class="max-w-6xl toupper uppercase font-bold">Teaching the next generation valuable technological
                     tools</h1>
             </div>
             <img src="../assets/mtclogo.jpg" alt=""
-                class="w-[600px] h-auto mt-96 rounded-xl animatedown shadow-2xl shadow-black">
+                class="w-[600px] h-auto mt-96 rounded-xl animatedown shadow-2xl shadow-black z-20">
         </div>
     </div>
     <div class=" bg-blue-200 pt-36 ">
@@ -116,19 +116,22 @@
             y: -200,
         });
 
-        gsap.from(".animateleft", {
-            x: "-100vw", // Start completely off-screen to the left
-            opacity: 0,  // Make the element initially invisible
+        gsap.fromTo(".animateleft", {
+            x: -200,
+            opacity: 0,
+        }, {
+            x: 0,
+            opacity: 1, // Fade in
+            duration: 2, 
             scrollTrigger: {
-                trigger: ".animateleft",
-                start: "top 80%", // Start the animation when the element is 80% from the top of the viewport
-                end: "top 20%",   // End when it's closer to the top of the viewport
-                scrub: 1,         // Makes the animation responsive to scroll
-                markers: true,    // Markers to visualize the trigger points
+                trigger: ".animateleft", // Element to watch
+                start: "top 50%", // Start when title-text reaches 80% of viewport
+                end: "top 30%", // End when title-text reaches 50% of viewport
+                scrub: 2, // Smoothly tie animation to scroll
+                markers: true, 
             },
-            x: 0, // Move into place
-            opacity: 1, // Fade the element in
-        });
+        }
+        );
 
 
 
