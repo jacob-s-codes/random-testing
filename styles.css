@@ -21,9 +21,7 @@
     /* Match the image's rounded corners */
 }
 
-.relative {
-    overflow: visible;
-}
+
 
 section {
     width: 100%;
@@ -34,9 +32,9 @@ section {
     position: relative;
 }
 
-.leading-16 {
+/* .leading-16 {
     transform: translate(-50%, -50%);
-}
+} */
 
 .review-wrp {
     display: grid;
