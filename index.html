@@ -10,7 +10,7 @@
 </head>
 
 <body class="overflow-x-hidden font-courier">
-    <div class="sticky top-0 z-10">
+    <div class="sticky top-0 z-30">
         <div class="text-white w-full bg-darkbg absolute overflow-x-hidden">
             <ul class="max-w-[1800px] mx-auto flex flex-row items-center   justify-between text-xl px-12">
                 <li class="text-2xl "><img src="../assets/horizontalmtclogo.jpg" alt="" class="w-36 "></li>
@@ -100,20 +100,38 @@
 
     </div>
 
-    <div class="pt-64 pb-64 px-24 bg-blue-950 text-white">
-        <h2 class="text-center text-5xl font-bold pb-64 underline decoration-[8px] max-w-4xl mx-auto leading-16">HERES WHAT STUDENTS HAVE TO SAY ABOUT MODE TO CODE</h2>
-        <div class="relative flex flex-row justify-between max-w-[1800px] mx-auto">
+    <div class="pt-64 pb-64 px-24 bg-blue-950 text-white ">
+        <section class="reviews">
+            <h2 class="text-center text-9xl font-bold pb-64  decoration-[8px]  mx-auto leading-16 absolute z-10 rtitle">TESTIMONIALS</h2>
+            <div class="review-wrp z-20 text-black">
+                <div class="review rl bg-white w-96 h-96">
+                    <p>Here's some reviews</p>
+                </div>
+                <div class="review rr">
+                    <img src="../assets/teachingimg5.jpg" alt="" class=" w-[400px] h-[300px]">
+                </div>
+                <div class="review rl">
+                    <img src="../assets/teachingimg5.jpg" alt="" class=" w-[400px] h-[300px]">
+                </div>
+                <div class="review rr">
+                    <img src="../assets/teachingimg5.jpg" alt="" class=" w-[400px] h-[300px]">
+                </div>
+
+            </div>
+        </section>
+        <!-- <div class=" flex flex-row justify-between max-w-[1800px] mx-auto"> -->
             
-            <div class="pin">
+            <!-- <div class="flex flex-col border border-white py-12 px-4">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-quote w-16 h-auto" viewBox="0 0 16 16">
                     <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
                   </svg>
-                <h1 class="text-3xl py-4 w-full max-w-3xl font-bold">"I enjoyed learning about all the ways that AI shows up in our lives."</h1>
+                <h1 class="text-3xl py-4 w-full max-w-3xl font-bold">"I enjoyed learning about all the ways that AI shows up in our lives." - Josie</h1>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-quote w-16 h-auto rotate-180" viewBox="0 0 16 16">
                     <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
                   </svg>
-            </div>
-            <div class="flex flex-col items-center gap-y-96">
+                  <img src="./assets/teachingimg5.jpg" alt="" class="w-full max-w-3xl rounded-xl ">
+            </div> -->
+            <!-- <div class="flex flex-col items-center gap-y-96">
                 <div class="testimonial">
                     <img src="../assets/teachingimg5.jpg" alt="" class="w-full max-w-3xl rounded-xl shadow-2xl shadow-white imgs">
                 </div>
@@ -123,12 +141,12 @@
                 <div class="testimonial">
                     <img src="../assets/teachingimg7.jpg" alt="" class="w-full max-w-3xl rounded-xl shadow-2xl shadow-white">
                 </div>
-            </div>
+            </div> -->
     
-        </div>
+        <!-- </div> -->
     </div>
 
-    <div class="bg-blue-200 pt-64">
+    <div class="bg-blue-200 py-96">
         <h2>Developed for both student</h2>
     </div>
 
@@ -184,40 +202,66 @@
             }
         );
 
-        gsap.to(".pin", {
+        var tl = gsap.timeline({
             scrollTrigger: {
-                trigger: ".pin",
-                start: "top 50%",
-                end: "bottom bottom",
-                pin: true,
+                trigger: ".reviews",
+                start: "top 80%",
+                end: "bottom top",
+                scrub: 1,
                 markers: true,
             }
         });
 
-        const texts = [
-            "\"I enjoyed learning about all the ways that AI shows up in our lives.\" - Josie",
-            "\"I liked it was slower so that even if you are a beginner you can follow along.\" - Anonymous",
-            "\"I love how I learned a lot, even in the first class.\" - Renee",
-            "This is image 4 description"
-        ];
+        tl.fromTo(".rl", { y: '350%' }, { y: '-150%' }, 0);
+        tl.fromTo(".rr", { y: '300%' }, { y: '-50%' }, 0);
 
-        // Select all images
-        const images = document.querySelectorAll(".testimonial");
-        const textElement = document.querySelector(".pin h1"); // The text that will change
+        gsap.fromTo(".rtitle", { x: '100%' }, {
+            x: '-120%', scrollTrigger: {
+                trigger: ".rtitle",
+                start: "top center",
+                end: "bottom center",
+                endTrigger: ".reviews",
+                pin: true,
+                scrub: 1,
+                markers: true,
+            }
+        }, 0);
 
-        images.forEach((img, index) => {
-            ScrollTrigger.create({
-                trigger: img,
-                start: "top center", // When the image reaches the center of the screen
-                end: "bottom bottom",
-                onEnter: () => textElement.textContent = texts[index], // Change text
-                onLeaveBack: () => {
-                    if (index > 0) {
-                        textElement.textContent = texts[index - 1]; // Go back to previous text
-                    }
-                }
-            });
-        });
+        // gsap.to(".pin", {
+        //     scrollTrigger: {
+        //         trigger: ".pin",
+        //         start: "top 50%",
+        //         end: "+=1500",
+        //         pin: true,
+        //         pinSpacing: false,
+        //         markers: true,
+        //     }
+        // });
+
+        // const texts = [
+        //     "\"I enjoyed learning about all the ways that AI shows up in our lives.\" - Josie",
+        //     "\"I liked it was slower so that even if you are a beginner you can follow along.\" - Anonymous",
+        //     "\"I love how I learned a lot, even in the first class.\" - Renee",
+        //     "This is image 4 description"
+        // ];
+
+        // // Select all images
+        // const images = document.querySelectorAll(".testimonial");
+        // const textElement = document.querySelector(".pin h1"); // The text that will change
+
+        // images.forEach((img, index) => {
+        //     ScrollTrigger.create({
+        //         trigger: img,
+        //         start: "top center", // When the image reaches the center of the screen
+        //         end: "bottom bottom",
+        //         onEnter: () => textElement.textContent = texts[index], // Change text
+        //         onLeaveBack: () => {
+        //             if (index > 0) {
+        //                 textElement.textContent = texts[index - 1]; // Go back to previous text
+        //             }
+        //         }
+        //     });
+        // });
 
 
 
