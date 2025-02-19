@@ -129,7 +129,7 @@
     </div>
 
     <div class="bg-blue-200 pt-64">
-
+        <h2>Developed for both student</h2>
     </div>
 
 
@@ -188,7 +188,7 @@
             scrollTrigger: {
                 trigger: ".pin",
                 start: "top 50%",
-                end: "+=200%",
+                end: "bottom bottom",
                 pin: true,
                 markers: true,
             }
@@ -209,7 +209,7 @@
             ScrollTrigger.create({
                 trigger: img,
                 start: "top center", // When the image reaches the center of the screen
-                end: "bottom center",
+                end: "bottom bottom",
                 onEnter: () => textElement.textContent = texts[index], // Change text
                 onLeaveBack: () => {
                     if (index > 0) {
