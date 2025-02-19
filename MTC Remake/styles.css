@@ -18,3 +18,7 @@
     border-radius: 12px; /* Match the image's rounded corners */
 }
 
+.relative {
+    overflow: visible;
+}
+

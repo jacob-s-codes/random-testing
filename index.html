@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../src/output.css">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./MTC Remake/styles.css">
     <title>Document</title>
 </head>
 
@@ -48,24 +48,21 @@
                         MORE ABOUT US</button>
                 </div>
                 <div class="max-w-3xl relative animateright rounded-xl overflow-hidden">
-                    <img src="../assets/teachingimg4.jpg" alt=""
-                        class="w-full rounded-xl shadow-2xl  shadow-darkbg">
+                    <img src="../assets/teachingimg4.jpg" alt="" class="w-full rounded-xl shadow-2xl  shadow-darkbg">
                     <div class="dark-overlay"></div>
                 </div>
-                
+
             </div>
         </div>
     </div>
 
-    <div>
-        
-    </div>
+
 
     <!-- <div class="py-64 bg-blue-200">
         <hr class="w-full border-4 border-darkbg">
     </div> -->
 
-    <div class="bg-blue-200 pb-96 pt-64">
+    <div class="bg-blue-200 pb-64 pt-64">
         <div class="max-w-[1800px] mx-auto px-12">
             <div class="flex flex-row items-center justify-center">
 
@@ -102,6 +99,39 @@
         </div>
 
     </div>
+
+    <div class="pt-64 pb-64 px-24 bg-blue-950 text-white">
+        <h2 class="text-center text-5xl font-bold pb-64 underline decoration-[8px] max-w-4xl mx-auto leading-16">HERES WHAT STUDENTS HAVE TO SAY ABOUT MODE TO CODE</h2>
+        <div class="relative flex flex-row justify-between max-w-[1800px] mx-auto">
+            
+            <div class="pin">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-quote w-16 h-auto" viewBox="0 0 16 16">
+                    <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+                  </svg>
+                <h1 class="text-3xl py-4 w-full max-w-3xl font-bold">"I enjoyed learning about all the ways that AI shows up in our lives."</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-quote w-16 h-auto rotate-180" viewBox="0 0 16 16">
+                    <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+                  </svg>
+            </div>
+            <div class="flex flex-col items-center gap-y-96">
+                <div class="testimonial">
+                    <img src="../assets/teachingimg5.jpg" alt="" class="w-full max-w-3xl rounded-xl shadow-2xl shadow-white imgs">
+                </div>
+                <div class="testimonial">
+                    <img src="../assets/teachingimg6.jpg" alt="" class="w-full max-w-3xl rounded-xl shadow-2xl shadow-white">
+                </div>
+                <div class="testimonial">
+                    <img src="../assets/teachingimg7.jpg" alt="" class="w-full max-w-3xl rounded-xl shadow-2xl shadow-white">
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+    <div class="bg-blue-200 pt-64">
+
+    </div>
+
 
 
 
@@ -153,6 +183,41 @@
                 },
             }
         );
+
+        gsap.to(".pin", {
+            scrollTrigger: {
+                trigger: ".pin",
+                start: "top 50%",
+                end: "+=200%",
+                pin: true,
+                markers: true,
+            }
+        });
+
+        const texts = [
+            "\"I enjoyed learning about all the ways that AI shows up in our lives.\" - Josie",
+            "\"I liked it was slower so that even if you are a beginner you can follow along.\" - Anonymous",
+            "\"I love how I learned a lot, even in the first class.\" - Renee",
+            "This is image 4 description"
+        ];
+
+        // Select all images
+        const images = document.querySelectorAll(".testimonial");
+        const textElement = document.querySelector(".pin h1"); // The text that will change
+
+        images.forEach((img, index) => {
+            ScrollTrigger.create({
+                trigger: img,
+                start: "top center", // When the image reaches the center of the screen
+                end: "bottom center",
+                onEnter: () => textElement.textContent = texts[index], // Change text
+                onLeaveBack: () => {
+                    if (index > 0) {
+                        textElement.textContent = texts[index - 1]; // Go back to previous text
+                    }
+                }
+            });
+        });
 
 
 
